@@ -17,18 +17,11 @@
 
 </body>
 <script>
-  var canvas = document.getElementById('viewport'),
-context = canvas.getContext('2d');
-
-make_base();
-
-function make_base()
-{
-  base_image = new Image();
-  base_image.src = 'MyImages/scream.jpg';
-  base_image.onload = function(){
-    context.drawImage(base_image, 0, 0);
-  }
-}
+  window.onload = function() {
+  var c = document.getElementById("canvas");
+  var ctx = c.getContext("2d");
+  var img = document.getElementById("scream");
+  ctx.drawImage(img, 90, 130, 50, 60, 10, 10, 50, 60);
+};
 </script>
 </html>
