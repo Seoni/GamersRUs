@@ -6,30 +6,29 @@
         background-color: lightcoral;
     }
 
-    h1 {
-        color:lightgreen;
-    }
-
-    p {
-        color: aqua;
-    }
+   
 </style>
 <body>
-<h1>Hello Nick!</h1>
-<p>This is an excellent test!</p> 
-<p>Let's Do This</p>
+
 <img src="MyImages/scream.jpg">
 
 <canvas id="canvas"></canvas>
-<p>Horray!</p>
+
 
 </body>
 <script>
-    window.onload = function() {
-        var c = document.getElementById("canvas");
-        var ctx = c.getContext("2d");
-        var img = document.getElementById("scream");
-        ctx.drawImage(img, 10, 10);
-    }
+  var canvas = document.getElementById('viewport'),
+context = canvas.getContext('2d');
+
+make_base();
+
+function make_base()
+{
+  base_image = new Image();
+  base_image.src = 'MyImages/scream.jpg+';
+  base_image.onload = function(){
+    context.drawImage(base_image, 0, 0);
+  }
+}
 </script>
 </html>
